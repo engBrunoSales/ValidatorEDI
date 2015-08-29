@@ -1,0 +1,161 @@
+{
+	"cnab": 150,
+	"banco": "BANCO SANTANDER",
+	"versao": "04",
+	"ano_layout": 2008,
+	"header": "A",
+	"headerlote": "",
+	"detalhe": ["B"],
+	"trailerlote": "",
+	"trailer": "C",
+	"posicaoSegmento": 2,   //Informação da posição referente ao tipo de segmento na linha.
+	"registros": [
+		{
+			"segmento": "A",
+			"descricao": "Segmento de Registro do tipo A",
+			"obrigatorio": true,
+			"repetido": false,
+			"campos": [
+				{
+					"nome": "sequencial",
+					"descricao": "Número sequencial registro",
+					"inicio": 1,
+					"tamanho": 4,
+					"obrigatorio": true,
+					"default": "",
+					"valor": "0",
+					"tipo": "9"  //Númerico
+				},
+				{
+					"nome": "registro",
+					"descricao": "Tipo do Registro",
+					"inicio": 5,
+					"tamanho": 1,
+					"obrigatorio": true,
+					"default": "",
+					"valor": "A",
+					"tipo": "A"  //Alfanúmerico
+				},
+				{
+					"nome": "conta",
+					"descricao": "Conta do cliente",
+					"inicio": 6,
+					"tamanho": 5,
+					"obrigatorio": true,
+					"default": "",
+					"valor": "12345",
+					"tipo": "9"
+				},
+				{
+					"nome": "branco",
+					"descricao": "Uso do banco",
+					"inicio": 11,
+					"tamanho": 140,
+					"obrigatorio": true,
+					"default": "",
+					"valor": " ",
+					"tipo": "D"  //Data
+				}
+			]
+		},
+		{
+			"segmento": "B",
+			"descricao": "Segmento de Registro do tipo B",
+			"obrigatorio": true,
+			"repetido": true,
+			"campos": [
+				{
+					"nome": "sequencial",
+					"descricao": "",
+					"inicio": 1,
+					"tamanho": 4,
+					"obrigatorio": true,
+					"default": "",
+					"valor": "0",
+					"tipo": "9"  //Númerico
+				},
+				{
+					"nome": "registro",
+					"descricao": "",
+					"inicio": 5,
+					"tamanho": 1,
+					"obrigatorio": true,
+					"default": "",
+					"valor": "B",
+					"tipo": "A"  //Alfanúmerico
+				},
+				{
+					"nome": "valor pagamento",
+					"descricao": "Valor pago",
+					"inicio": 6,
+					"tamanho": 13,
+					"obrigatorio": true,
+					"default": "",
+					"valor": "12.34",
+					"tipo": "N"  //Númerico decimal
+				},
+				{
+					"nome": "zeros",
+					"descricao": "Campo zerado",
+					"inicio": 19,
+					"tamanho": 132,
+					"obrigatorio": true,
+					"default": "",
+					"valor": "0",
+					"tipo": "9"
+				}
+			]
+		},
+		{
+			"segmento": "C",
+			"descricao": "Segmento de Registro do tipo C",
+			"obrigatorio": true,
+			"repetido": false,
+			"campos": [
+				{
+					"nome": "sequencial",
+					"descricao": "sequencial",
+					"inicio": 1,
+					"tamanho": 4,
+					"obrigatorio": true,
+					"default": "",
+					"valor": "0",
+					"tipo": "9"  //Númerico
+				},
+				{
+					"nome": "registro",
+					"descricao": "segmento",
+					"inicio": 5,
+					"tamanho": 1,
+					"obrigatorio": true,
+					"default": "",
+					"valor": "C",
+					"tipo": "A"  //Alfanúmerico
+				},
+				{
+					"nome": "totalregistro",
+					"descricao": "Total de Registros no arquivo",
+					"inicio": 6,
+					"tamanho": 5,
+					"obrigatorio": true,
+					"default": "",
+					"valor": "12.34",
+					"tipo": "N"  //Númerico decimal
+				},
+				{
+					"nome": "branco",
+					"descricao": "Uso do banco",
+					"inicio": 11,
+					"tamanho": 140,
+					"obrigatorio": true,
+					"default": "",
+					"valor": " ",
+					"tipo": "A"
+				}
+			]
+		}
+
+	]
+	
+
+}
