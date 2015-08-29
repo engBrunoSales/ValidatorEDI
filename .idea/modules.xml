@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ValidadorEDI.iml" filepath="$PROJECT_DIR$/ValidadorEDI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ValidatorEDI.iml" filepath="$PROJECT_DIR$/ValidatorEDI.iml" />
     </modules>
   </component>
 </project>
