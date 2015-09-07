@@ -8,7 +8,7 @@
 	"detalhe": ["B"],
 	"trailerlote": "",
 	"trailer": "C",
-	"posicaoSegmento": 2,   //Informação da posição referente ao tipo de segmento na linha.
+	"posicaoSegmento": 2,
 	"registros": [
 		{
 			"segmento": "A",
@@ -24,7 +24,7 @@
 					"obrigatorio": true,
 					"default": "",
 					"valor": "0",
-					"tipo": "9"  //Númerico
+					"tipo": "9"
 				},
 				{
 					"nome": "registro",
@@ -34,7 +34,7 @@
 					"obrigatorio": true,
 					"default": "",
 					"valor": "A",
-					"tipo": "A"  //Alfanúmerico
+					"tipo": "A"
 				},
 				{
 					"nome": "conta",
@@ -54,7 +54,7 @@
 					"obrigatorio": true,
 					"default": "",
 					"valor": " ",
-					"tipo": "D"  //Data
+					"tipo": "A"
 				}
 			]
 		},
@@ -72,7 +72,7 @@
 					"obrigatorio": true,
 					"default": "",
 					"valor": "0",
-					"tipo": "9"  //Númerico
+					"tipo": "9"
 				},
 				{
 					"nome": "registro",
@@ -82,7 +82,7 @@
 					"obrigatorio": true,
 					"default": "",
 					"valor": "B",
-					"tipo": "A"  //Alfanúmerico
+					"tipo": "A"
 				},
 				{
 					"nome": "valor pagamento",
@@ -92,7 +92,7 @@
 					"obrigatorio": true,
 					"default": "",
 					"valor": "12.34",
-					"tipo": "N"  //Númerico decimal
+					"tipo": "N"
 				},
 				{
 					"nome": "zeros",
@@ -120,7 +120,7 @@
 					"obrigatorio": true,
 					"default": "",
 					"valor": "0",
-					"tipo": "9"  //Númerico
+					"tipo": "9"
 				},
 				{
 					"nome": "registro",
@@ -130,7 +130,7 @@
 					"obrigatorio": true,
 					"default": "",
 					"valor": "C",
-					"tipo": "A"  //Alfanúmerico
+					"tipo": "A"
 				},
 				{
 					"nome": "totalregistro",
@@ -140,7 +140,7 @@
 					"obrigatorio": true,
 					"default": "",
 					"valor": "12.34",
-					"tipo": "N"  //Númerico decimal
+					"tipo": "N"
 				},
 				{
 					"nome": "branco",

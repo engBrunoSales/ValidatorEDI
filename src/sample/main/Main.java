@@ -1,16 +1,11 @@
 package sample.main;
 
-import org.json.JSONObject;
+
 import sample.cnab.Cnab;
 import sample.edi.Edi;
-
-import javax.lang.model.type.NullType;
-import javax.lang.model.type.TypeKind;
-import javax.lang.model.type.TypeVisitor;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.text.StringCharacterIterator;
 import java.util.Scanner;
 
 /**
@@ -23,15 +18,26 @@ public class Main {
 
 
     private String lerArquivo( String path ){
+
         String linha = null;
+        String arquivo = "";
+
         try {
             FileReader arq = new FileReader( path );
             BufferedReader lerArq = new BufferedReader( arq );
 
             linha = lerArq.readLine();
+            if ( linha == null || linha == "" || linha == " "){
+                System.err.println( "Arquivo se encontra vazio!!" );
+            }
+            arquivo += linha;
+
             while ( linha != null ) {
 
-                linha += lerArq.readLine(); // lê da segunda até a última linha
+                linha = lerArq.readLine(); // lê da segunda até a última linha
+                if( linha != null ){
+                    arquivo += linha;
+                }
 
             }
 
@@ -41,12 +47,12 @@ public class Main {
                     e.getMessage( ) );
         }
 
-        if ( linha == null ){
+        if ( arquivo == null || arquivo == "" || arquivo == " " ){
             System.err.println( "Arquivo se encontra vazio!!" );
         }
 
 
-        return linha;
+        return arquivo;
     }
 
     public void cabecalho(){
@@ -58,13 +64,13 @@ public class Main {
     }
 
     public void programa(){
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner =   new Scanner(System.in);
         System.out.println("Usuário para podermos continuar o processo de verificação EDI Bancário por favor\n coloque " +
                 "o caminho do arquivo de configuração EDI referemte ao arquivo que se quer verificar.");
         System.out.println();
 
-        System.out.print("Caminho do arquivo de Configuração(.json): ");
-        String pathJson = scanner.nextLine();
+        System.out.println("Caminho do arquivo de Configuração(.json): ");
+        String pathJson = scanner.next();
         System.out.println();
         //Ler o arquivo json e define o objeto cnab
         String json = this.lerArquivo( pathJson );
@@ -72,12 +78,13 @@ public class Main {
         this.cnab.jsonForObject( json );
 
 
-        System.out.print("Caminho do arquivo(.txt): ");
-        String pathArquivo = scanner.nextLine();
+        System.out.println("Caminho do arquivo para verifição(.txt): ");
+        String pathArquivo = scanner.next();
         System.out.println();
         //Ler o arquivo txt e faz a verificação de todos os registros e todos os campos
-        String txt = this.lerArquivo( pathArquivo );
-
+        String txtArquivo = this.lerArquivo( pathArquivo );
+        Edi edi = new Edi(this.cnab, txtArquivo );
+        edi.lerArquivo();
 
     }
 

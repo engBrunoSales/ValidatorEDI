@@ -18,7 +18,7 @@ public class Cnab {
     private int ano_layout;
     private String header;
     private String headerlote;
-    private String detalhe;
+    private JSONArray detalhe;
     private String trailerlote;
     private String trailer;
     private int posicaoSegmento;
@@ -131,24 +131,6 @@ public class Cnab {
     }
 
     /**
-     * Getter for property 'detalhe'.
-     *
-     * @return Value for property 'detalhe'.
-     */
-    public String getDetalhe() {
-        return detalhe;
-    }
-
-    /**
-     * Setter for property 'detalhe'.
-     *
-     * @param detalhe Value to set for property 'detalhe'.
-     */
-    public void setDetalhe(String detalhe) {
-        this.detalhe = detalhe;
-    }
-
-    /**
      * Getter for property 'trailerlote'.
      *
      * @return Value for property 'trailerlote'.
@@ -252,20 +234,18 @@ public class Cnab {
 
     }
 
-    public void verificaSeEData(  ){
-
-
-    }
-
     public void verificaValorDoCampo( String valor, String tipo, String nomeCampo, String nomeRegistro ){
 
         switch ( tipo ){
             case "9" :
                 this.verificaSeENumerico( valor );
+                break;
             case "A" :
                 this.verificaSeEAlfanumerico( valor );
+                break;
             case "N" :
                 this.verificaSeEDecimal( valor );
+                break;
             default:
                 System.err.println(" O campo: " + nomeCampo + " do Segmento: " + nomeRegistro + " não apresenta" +
                         " nenhum tipo padrão( 9, N, A ) para o valor: " + valor + " .");
@@ -288,7 +268,7 @@ public class Cnab {
         this.ano_layout      = my_obj.getInt( "ano_layout" );
         this.header          = my_obj.getString( "header" );
         this.headerlote      = my_obj.getString( "headerlote" );
-        this.detalhe         = my_obj.getString( "detalhe" );
+        this.detalhe         = my_obj.getJSONArray("detalhe");
         this.trailerlote     = my_obj.getString( "trailerlote" );
         this.trailer         = my_obj.getString( "trailer" );
         this.posicaoSegmento = my_obj.getInt( "posicaoSegmento" );
@@ -304,12 +284,12 @@ public class Cnab {
             boolean repetido = registroJson.getBoolean( "repetido" );
 
 
-            JSONArray camposJson = my_obj.getJSONArray( "campos" );
+            JSONArray camposJson = registroJson.getJSONArray( "campos" );
             ArrayList<Campo> campos = new ArrayList<Campo>( camposJson.length( ) );
-            for ( int j = 0; i < camposJson.length(); j++ ){
+            for ( int j = 0; j < camposJson.length(); j++ ){
                 JSONObject campoJson = camposJson.getJSONObject( j );
 
-                String nome = campoJson.getString( "campo" );
+                String nome = campoJson.getString( "nome" );
                 String descricaoCampo = campoJson.getString( "descricao" );
                 int inicio = campoJson.getInt( "inicio" );
                 int tamanho = campoJson.getInt( "tamanho" );
