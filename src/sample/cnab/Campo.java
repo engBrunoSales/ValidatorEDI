@@ -11,7 +11,7 @@ public class Campo {
     private int tamanho;
     private boolean obrigatorio;
     private String valorPadrao;
-    private static String tipo;
+    private String tipo;
 
 
     public Campo(String nome, String valor, int tamanho, int inicio, String tipo) {
@@ -108,12 +108,57 @@ public class Campo {
     }
 
     /**
+     * Getter for property 'obrigatorio'.
+     *
+     * @return Value for property 'obrigatorio'.
+     */
+    public boolean isObrigatorio() {
+        return obrigatorio;
+    }
+
+    /**
+     * Setter for property 'obrigatorio'.
+     *
+     * @param obrigatorio Value to set for property 'obrigatorio'.
+     */
+    public void setObrigatorio(boolean obrigatorio) {
+        this.obrigatorio = obrigatorio;
+    }
+
+    /**
+     * Getter for property 'valorPadrao'.
+     *
+     * @return Value for property 'valorPadrao'.
+     */
+    public String getValorPadrao() {
+        return valorPadrao;
+    }
+
+    /**
+     * Setter for property 'valorPadrao'.
+     *
+     * @param valorPadrao Value to set for property 'valorPadrao'.
+     */
+    public void setValorPadrao(String valorPadrao) {
+        this.valorPadrao = valorPadrao;
+    }
+
+    /**
      * Getter for property 'tipo'.
      *
      * @return Value for property 'tipo'.
      */
-    public static String getTipo() {
-        return tipo;
+    public String getTipo() {
+        return this.tipo;
+    }
+
+    /**
+     * Setter for property 'tipo'.
+     *
+     * @param tipo Value to set for property 'tipo'.
+     */
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 }
 

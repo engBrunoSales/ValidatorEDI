@@ -6,6 +6,7 @@ import sample.edi.Edi;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -30,13 +31,13 @@ public class Main {
             if ( linha == null || linha == "" || linha == " "){
                 System.err.println( "Arquivo se encontra vazio!!" );
             }
-            arquivo += linha;
+            arquivo += linha + "\n";
 
             while ( linha != null ) {
 
                 linha = lerArq.readLine(); // lê da segunda até a última linha
                 if( linha != null ){
-                    arquivo += linha;
+                    arquivo += linha + "\n";
                 }
 
             }
@@ -88,13 +89,32 @@ public class Main {
 
     }
 
+    public String exibeRelatorioErros(){
+
+        String relatorioErros = "";
+        ArrayList<String> mensagens = this.edi.error.getMensagemError();
+        for (int i = 0; i < mensagens.size(); i++) {
+
+            relatorioErros += mensagens.get(i) + "\n";
+
+        }
+        return relatorioErros;
+
+    }
+
 
     public static void main( String args[] ){
 
         Main main = new Main();
         main.cabecalho();
         main.programa();
-
+        String relatorioErro = main.exibeRelatorioErros();
+        if ( relatorioErro.compareTo("") != 0 && relatorioErro.compareTo(" ") != 0 ){
+            System.out.printf( relatorioErro );
+        }else{
+            System.out.println("Arquivo Válido!");
+            System.out.println("Verificação sem erro!");
+        }
 
     }
 

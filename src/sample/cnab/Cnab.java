@@ -243,13 +243,32 @@ public class Cnab {
             case "A" :
                 this.verificaSeEAlfanumerico( valor );
                 break;
-            case "N" :
-                this.verificaSeEDecimal( valor );
+            case " ":
+                break;
+            case "0":
                 break;
             default:
                 System.err.println(" O campo: " + nomeCampo + " do Segmento: " + nomeRegistro + " não apresenta" +
                         " nenhum tipo padrão( 9, N, A ) para o valor: " + valor + " .");
         }
+    }
+
+    public Registro encontraRegistro( char tiposSegmento ){
+
+        String tipoSgm = tiposSegmento + "";
+        ArrayList<Registro> registros = this.getRegistros();
+
+        for (int i = 0; i < registros.size(); i++) {
+
+            if ( registros.get(i).getSegmento().compareTo( tipoSgm ) == 0 ){
+
+                return registros.get(i);
+
+            }
+        }
+
+        return null;
+
     }
 
 

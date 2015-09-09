@@ -8,7 +8,7 @@
 	"detalhe": ["B"],
 	"trailerlote": "",
 	"trailer": "C",
-	"posicaoSegmento": 2,
+	"posicaoSegmento": 5,
 	"registros": [
 		{
 			"segmento": "A",
@@ -54,7 +54,7 @@
 					"obrigatorio": true,
 					"default": "",
 					"valor": " ",
-					"tipo": "A"
+					"tipo": " "
 				}
 			]
 		},
@@ -92,7 +92,7 @@
 					"obrigatorio": true,
 					"default": "",
 					"valor": "12.34",
-					"tipo": "N"
+					"tipo": "9"
 				},
 				{
 					"nome": "zeros",
@@ -102,7 +102,7 @@
 					"obrigatorio": true,
 					"default": "",
 					"valor": "0",
-					"tipo": "9"
+					"tipo": "0"
 				}
 			]
 		},
@@ -140,7 +140,7 @@
 					"obrigatorio": true,
 					"default": "",
 					"valor": "12.34",
-					"tipo": "N"
+					"tipo": "9"
 				},
 				{
 					"nome": "branco",
@@ -150,7 +150,7 @@
 					"obrigatorio": true,
 					"default": "",
 					"valor": " ",
-					"tipo": "A"
+					"tipo": " "
 				}
 			]
 		}
